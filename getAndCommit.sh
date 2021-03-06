@@ -1,5 +1,5 @@
 set -u
-set -e
+#set -e
 
 url="https://www.ueberbrueckungshilfe-unternehmen.de/UBH/Navigation/DE/Dokumente/FAQ/Ueberbrueckungshilfe-III/ueberbrueckungshilfe-lll.html"
 regex="<main[^>]*?>(.*)</main>"
