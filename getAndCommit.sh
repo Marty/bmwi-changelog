@@ -7,7 +7,11 @@ regex="<main[^>]*?>(.*)</main>"
 if [[ $(curl $url) =~ $regex ]]
 then
     content="${BASH_REMATCH[1]}"
-    echo $content > ueberbrueckungshilfe-lll.html
+    filename="${url##*/}"
+    echo $content > $filename
+    git add $filename
+    git commit -m "$(date '+%Y-%m-%d %H:%M:%S') $filename"
+    git push origin master
 else
     echo "Failed: $?"
 fi    
