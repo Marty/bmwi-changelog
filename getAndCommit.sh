@@ -24,8 +24,8 @@ then
 	exit 0
     else
         echo "Ueberbrueckungshilfen geaendert!"
-	echo '<a href="https://github.com/Marty/bmwi-changelog/commits/master/ueberbrueckungshilfe-lll.html">Siehe hier</a>'
-        git push origin master > /dev/null
+	echo 'https://github.com/Marty/bmwi-changelog/commits/master/ueberbrueckungshilfe-lll.html'
+        git push origin master > /dev/null 2>&1
         exit 0
     fi
 else
