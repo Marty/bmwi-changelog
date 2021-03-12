@@ -10,11 +10,12 @@ then
     filename="${url##*/}"
     echo $content > $filename
  
-    sed -i -r "s/<sup>([^<]*)<\/sup>\s?/ [\1] /g" $filename 
+    sed -i -r "s/<sup>([^<]*)<\/sup>\s?/ [\1] /g" $filename
+    sed -i -r "s/Druckdatum.*//" $filename 
     sed -i -r "s/<\/?(strong|abbr|sup|a|span)\s?[^>]*>//g" $filename
     sed -i -r "s/<[^>]+?>/|/g" $filename
     sed -i -r "s/(\|\s*)+/\n/g" $filename
-    
+
     git add $filename
     git commit -m "$(date '+%Y-%m-%d %H:%M:%S') $filename" > /dev/null
 
