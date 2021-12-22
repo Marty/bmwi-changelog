@@ -12,7 +12,7 @@ then
  
     sed -i -r "s/<sup>([^<]*)<\/sup>\s?/ [\1] /g" $filename
     sed -i -r "s/Druckdatum.*//" $filename 
-    sed -i -r "s/<\/?(strong|abbr|sup|a|span)\s?[^>]*>//g" $filename
+    sed -i -r "s/<\/?(strong|abbr|sup|a|span|em)\s?[^>]*>//g" $filename
     sed -i -r "s/<[^>]+?>/|/g" $filename
     sed -i -r "s/(\|\s*)+/\n/g" $filename
 
