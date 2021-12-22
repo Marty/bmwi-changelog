@@ -4,6 +4,9 @@ set -u
 url="https://www.ueberbrueckungshilfe-unternehmen.de/UBH/Navigation/DE/Dokumente/FAQ/Ueberbrueckungshilfe-III/ueberbrueckungshilfe-lll.html"
 regex="<main[^>]*?>(.*)</main>"
 
+git clean -f
+git pull > /dev/null 2>&1
+
 if [[ $(curl -s $url) =~ $regex ]]
 then
     content="${BASH_REMATCH[1]}"
